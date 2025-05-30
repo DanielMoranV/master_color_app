@@ -1,109 +1,109 @@
-# Laravel Vue Starter Kit - E-commerce/Inventory
+# Sistema de Gestión de Colores con Laravel y Vue.js
 
-## Description
-An e-commerce platform or inventory management system with features for product, order, client, and stock management. This starter kit provides a foundation for building robust web applications using Laravel and Vue.js with Inertia.js.
+## Descripción
+Sistema de gestión de colores y productos con funcionalidades para administración de productos, pedidos, clientes y stock. Este proyecto utiliza Laravel como backend y Vue.js con Inertia.js como frontend.
 
-## Key Features
-*   **User Authentication:** Secure login and registration for administrators and staff.
-*   **Client Authentication:** Separate authentication system for customers.
-*   **Product Management:** Create, read, update, and delete products.
-*   **Inventory/Stock Management:** Track product stock levels and manage inventory movements.
-*   **Order Management:** Process customer orders and manage their lifecycle.
-*   **Client Management:** Manage customer information and order history.
-*   **Payment Processing:** Integration for handling payments (leveraging the `Payment` model and related controllers).
+## Características Principales
+*   **Autenticación de Usuarios:** Sistema de login y registro para administradores y personal.
+*   **Autenticación de Clientes:** Sistema de autenticación separado para clientes.
+*   **Gestión de Productos:** Crear, leer, actualizar y eliminar productos.
+*   **Gestión de Stock:** Seguimiento de niveles de stock y movimientos de inventario.
+*   **Gestión de Pedidos:** Procesamiento de pedidos de clientes y gestión de su ciclo de vida.
+*   **Gestión de Clientes:** Administración de información de clientes y su historial de pedidos.
+*   **Procesamiento de Pagos:** Integración para manejo de pagos (utilizando el modelo `Payment` y sus controladores relacionados).
 
-## Technologies Used
+## Tecnologías Utilizadas
 *   **PHP:** ^8.2
 *   **Laravel:** ^12.0
-*   **Vue.js:** ^3.5 (via **Inertia.js** ^2.0.0)
-*   **Ziggy:** ^2.4 (for using Laravel routes in JavaScript)
+*   **Vue.js:** ^3.5 (a través de **Inertia.js** ^2.0.0)
+*   **Ziggy:** ^2.4 (para usar rutas de Laravel en JavaScript)
 *   **Tailwind CSS:** ^4.1
-*   **Database:** SQLite (default), easily configurable for MySQL, PostgreSQL, etc. via `config/database.php`.
+*   **Base de Datos:** SQLite (por defecto), fácilmente configurable para MySQL, PostgreSQL, etc. a través de `config/database.php`.
 
-## Getting Started / Setup
+## Configuración Inicial
 
-1.  **Clone the repository:**
+1.  **Clonar el repositorio:**
     ```bash
     git clone https://github.com/your-username/your-repository-name.git
     cd your-repository-name
     ```
-2.  **Copy `.env.example` to `.env` and configure environment variables:**
+2.  **Copiar `.env.example` a `.env` y configurar variables de entorno:**
     ```bash
     cp .env.example .env
     ```
-    *   Ensure `APP_KEY` is set (can be generated in a later step).
-    *   Configure your database settings in `.env` (e.g., for MySQL or PostgreSQL if not using the default SQLite).
+    *   Asegúrate de que `APP_KEY` esté configurado (puede generarse en un paso posterior).
+    *   Configura los ajustes de tu base de datos en `.env` (por ejemplo, para MySQL o PostgreSQL si no usas SQLite por defecto).
 
-3.  **Install PHP dependencies:**
+3.  **Instalar dependencias de PHP:**
     ```bash
     composer install
     ```
-4.  **Install Node.js dependencies:**
+4.  **Instalar dependencias de Node.js:**
     ```bash
     npm install
     ```
-5.  **Generate application key:**
+5.  **Generar clave de aplicación:**
     ```bash
     php artisan key:generate
     ```
-6.  **Run database migrations:**
+6.  **Ejecutar migraciones de la base de datos:**
     ```bash
     php artisan migrate
     ```
-    *(This will also create the `database/database.sqlite` file if it doesn't exist and you are using SQLite).*
+    *(Esto también creará el archivo `database/database.sqlite` si no existe y estás usando SQLite).*
 
-7.  **Seed the database (optional, if seeders are available):**
+7.  **Sembrar la base de datos (opcional, si hay seeders disponibles):**
     ```bash
     php artisan db:seed
     ```
-8.  **Compile frontend assets:**
-    *   For development (with hot reloading):
+8.  **Compilar assets del frontend:**
+    *   Para desarrollo (con recarga automática):
         ```bash
         npm run dev
         ```
-    *   For production:
+    *   Para producción:
         ```bash
         npm run build
         ```
-9.  **Serve the application:**
-    *   If you ran `npm run dev` using the `composer dev` script, the PHP server is already running.
-    *   Otherwise, you can start the Laravel development server:
+9.  **Iniciar la aplicación:**
+    *   Si ejecutaste `npm run dev` usando el script `composer dev`, el servidor PHP ya está en ejecución.
+    *   De lo contrario, puedes iniciar el servidor de desarrollo de Laravel:
         ```bash
         php artisan serve
         ```
-    Access the application at `http://localhost:8000` (or the address shown by `php artisan serve`).
+    Accede a la aplicación en `http://localhost:8000` (o la dirección mostrada por `php artisan serve`).
 
-## Project Structure (Brief Overview)
-*   `app/`: Core Laravel application code (Models, Controllers, Providers, Services, etc.).
-*   `bootstrap/`: Scripts for bootstrapping the framework.
-*   `config/`: Application configuration files.
-*   `database/`: Database migrations, factories, and seeders.
-*   `public/`: Publicly accessible assets (compiled JS/CSS, images, etc.).
+## Estructura del Proyecto
+*   `app/`: Código principal de la aplicación Laravel (Modelos, Controladores, Proveedores, Servicios, etc.).
+*   `bootstrap/`: Scripts para inicializar el framework.
+*   `config/`: Archivos de configuración de la aplicación.
+*   `database/`: Migraciones, fábricas y seeders de la base de datos.
+*   `public/`: Assets accesibles públicamente (JS/CSS compilados, imágenes, etc.).
 *   `resources/`:
-    *   `css/`: CSS files (e.g., `app.css` for Tailwind).
-    *   `js/`: Vue.js components, pages, layouts, and JavaScript assets (managed by Vite).
-    *   `views/`: Blade templates (primarily `app.blade.php` which serves as the entry point for Inertia.js).
-*   `routes/`: Web and API route definitions (`web.php`, `api.php`, `auth.php`, etc.).
-*   `storage/`: Application cache, logs, and user-uploaded files.
-*   `tests/`: Feature and unit tests.
-*   `vite.config.ts`: Vite configuration for frontend asset bundling.
+    *   `css/`: Archivos CSS (por ejemplo, `app.css` para Tailwind).
+    *   `js/`: Componentes Vue.js, páginas, layouts y assets JavaScript (manejados por Vite).
+    *   `views/`: Plantillas Blade (principalmente `app.blade.php` que sirve como punto de entrada para Inertia.js).
+*   `routes/`: Definiciones de rutas web y API (`web.php`, `api.php`, `auth.php`, etc.).
+*   `storage/`: Cache de la aplicación, logs y archivos subidos por usuarios.
+*   `tests/`: Pruebas de características y unitarias.
+*   `vite.config.ts`: Configuración de Vite para el empaquetado de assets del frontend.
 
-## Available Scripts (from `composer.json`)
+## Scripts Disponibles (desde `composer.json`)
 
 *   `composer dev`:
-    *   Runs `php artisan serve`, `php artisan queue:listen --tries=1`, and `npm run dev` (Vite) concurrently.
-    *   This is the recommended way to start the development environment.
+    *   Ejecuta `php artisan serve`, `php artisan queue:listen --tries=1`, y `npm run dev` (Vite) simultáneamente.
+    *   Esta es la forma recomendada de iniciar el entorno de desarrollo.
 *   `composer dev:ssr`:
-    *   Builds SSR assets (`npm run build:ssr`).
-    *   Runs `php artisan serve`, `php artisan queue:listen --tries=1`, `php artisan pail` (logs), and `php artisan inertia:start-ssr` concurrently.
-    *   Use this if you are working with Server-Side Rendering.
+    *   Construye assets SSR (`npm run build:ssr`).
+    *   Ejecuta `php artisan serve`, `php artisan queue:listen --tries=1`, `php artisan pail` (logs), y `php artisan inertia:start-ssr` simultáneamente.
+    *   Usa esto si estás trabajando con Renderizado del Lado del Servidor.
 *   `composer test`:
-    *   Clears application configuration cache (`php artisan config:clear`).
-    *   Runs Pest tests (`php artisan test`).
+    *   Limpia la caché de configuración de la aplicación (`php artisan config:clear`).
+    *   Ejecuta pruebas Pest (`php artisan test`).
 
-You can also use `npm` scripts directly (from `package.json`):
-*   `npm run dev`: Starts the Vite development server with hot module replacement.
-*   `npm run build`: Compiles frontend assets for production.
-*   `npm run build:ssr`: Compiles frontend assets for production including SSR build.
-*   `npm run format`: Formats code in the `resources/` directory using Prettier.
-*   `npm run lint`: Lints JavaScript/TypeScript files using ESLint.
+También puedes usar scripts de `npm` directamente (desde `package.json`):
+*   `npm run dev`: Inicia el servidor de desarrollo de Vite con recarga automática.
+*   `npm run build`: Compila assets del frontend para producción.
+*   `npm run build:ssr`: Compila assets del frontend para producción incluyendo build SSR.
+*   `npm run format`: Formatea código en el directorio `resources/` usando Prettier.
+*   `npm run lint`: Analiza archivos JavaScript/TypeScript usando ESLint.
