@@ -29,7 +29,7 @@ defineProps<{
                 <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900">
                         <h1 class="mb-6 text-2xl font-bold">Welcome back, {{ auth.user.name }}!</h1>
-                        
+
                         <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
                             <!-- Shopping Cart Card -->
                             <Card>
@@ -46,7 +46,7 @@ defineProps<{
                                     </Button>
                                 </CardFooter>
                             </Card>
-                            
+
                             <!-- Orders Card -->
                             <Card>
                                 <CardHeader class="pb-2">
@@ -62,7 +62,7 @@ defineProps<{
                                     </Button>
                                 </CardFooter>
                             </Card>
-                            
+
                             <!-- Addresses Card -->
                             <Card>
                                 <CardHeader class="pb-2">
@@ -78,7 +78,7 @@ defineProps<{
                                     </Button>
                                 </CardFooter>
                             </Card>
-                            
+
                             <!-- Profile Card -->
                             <Card>
                                 <CardHeader class="pb-2">
@@ -95,7 +95,7 @@ defineProps<{
                                 </CardFooter>
                             </Card>
                         </div>
-                        
+
                         <div class="mt-8">
                             <h2 class="mb-4 text-xl font-semibold">Recent Orders</h2>
                             <p class="text-muted-foreground">Your recent order history will appear here.</p>

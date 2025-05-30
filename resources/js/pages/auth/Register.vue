@@ -11,8 +11,10 @@ import { LoaderCircle } from 'lucide-vue-next';
 const form = useForm({
     name: '',
     email: '',
+    dni: '',
     password: '',
     password_confirmation: '',
+    role_id: 2, // 2 es el ID del rol 'user' por defecto
 });
 
 const submit = () => {
@@ -29,9 +31,33 @@ const submit = () => {
         <form @submit.prevent="submit" class="flex flex-col gap-6">
             <div class="grid gap-6">
                 <div class="grid gap-2">
-                    <Label for="name">Name</Label>
-                    <Input id="name" type="text" required autofocus :tabindex="1" autocomplete="name" v-model="form.name" placeholder="Full name" />
+                    <Label for="name">Nombre</Label>
+                    <Input id="name" type="text" required autofocus :tabindex="1" autocomplete="name" v-model="form.name" placeholder="Nombre completo" />
                     <InputError :message="form.errors.name" />
+                </div>
+
+                <div class="grid gap-2">
+                    <Label for="email">Correo Electrónico</Label>
+                    <Input id="email" type="email" required :tabindex="2" autocomplete="email" v-model="form.email" placeholder="ejemplo@email.com" />
+                    <InputError :message="form.errors.email" />
+                </div>
+
+                <div class="grid gap-2">
+                    <Label for="dni">DNI</Label>
+                    <Input id="dni" type="text" required :tabindex="3" v-model="form.dni" placeholder="12345678A" />
+                    <InputError :message="form.errors.dni" />
+                </div>
+
+                <div class="grid gap-2">
+                    <Label for="password">Contraseña</Label>
+                    <Input id="password" type="password" required :tabindex="4" autocomplete="new-password" v-model="form.password" />
+                    <InputError :message="form.errors.password" />
+                </div>
+
+                <div class="grid gap-2">
+                    <Label for="password_confirmation">Confirmar Contraseña</Label>
+                    <Input id="password_confirmation" type="password" required :tabindex="5" autocomplete="new-password" v-model="form.password_confirmation" />
+                    <InputError :message="form.errors.password_confirmation" />
                 </div>
 
                 <div class="grid gap-2">
